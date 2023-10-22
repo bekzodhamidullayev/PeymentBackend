@@ -3,6 +3,7 @@ package uz.pdp.peyment.service.validation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import uz.pdp.peyment.entity.UserEntity;
+import uz.pdp.peyment.exception.DataNotFoundException;
 import uz.pdp.peyment.repo.UserRepository;
 
 @Component
@@ -15,7 +16,8 @@ public class UserEntityValidator extends BaseValidation<UserEntity, UserReposito
         log.info("validated " + entity.getClass().getName());
     }
 
-    private void checkEmailExists(String username) {
-//        if(repository.findUserEntitiesByUsername)
+    private UserEntity checkEmailExists(String username) {
+        return repository.findUserEntitiesByUsername(username).orElseThrow(
+                () -> new DataNotFoundException("user not found"));
     }
 }
