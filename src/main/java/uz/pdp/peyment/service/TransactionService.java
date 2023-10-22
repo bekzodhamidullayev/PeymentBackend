@@ -75,17 +75,5 @@ public class TransactionService {
         }
         return responseDtoList;
     }
-//    public List<TransactionEntity> getAll(UUID userId) {
-//        UserEntity user = userRepository.findById(userId)
-//                .orElseThrow(
-//                        () -> new DataNotFoundException("user not found")
-//                );
-//
-//        return transactionRepository.findAllBySenderOrReceiver
-//                (user, user);
-//    }
 
-//    public List<TransactionEntity> findByCardNumberAndTransactionDateBetween(TransactionHistoryInPeriodDto inPeriodDto) {
-//        return transactionRepository.findTransactionEntitiesByOwnerIdAndCreateDateBetween(inPeriodDto.getOwnerId(), inPeriodDto.getStartData(), inPeriodDto.getEndDate());
-//    }
 }
