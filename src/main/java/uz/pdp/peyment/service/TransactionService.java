@@ -25,9 +25,7 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class TransactionService {
-    private final ModelMapper modelMapper;
     private final CardRepository cardRepository;
-    private final UserRepository userRepository;
     private final TransactionRepository transactionRepository;
 
     public void addTr(TransactionCreateDto transactionDto) {
